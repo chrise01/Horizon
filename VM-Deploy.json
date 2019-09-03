@@ -1,0 +1,263 @@
+#----------------- Start of code capture -----------------
+
+#---------------ListKmipServers---------------
+$_this = Get-View -Id 'CryptoManagerKmip-CryptoManager'
+$_this.ListKmipServers($null)
+
+#---------------QueryConfigOptionDescriptor---------------
+$_this = Get-View -Id 'EnvironmentBrowser-envbrowser-1041'
+$_this.QueryConfigOptionDescriptor()
+
+#---------------QueryConfigOption---------------
+$key = 'vmx-14'
+$_this = Get-View -Id 'EnvironmentBrowser-envbrowser-1041'
+$_this.QueryConfigOption($key, $null)
+
+#---------------QueryConfigOptionEx---------------
+$spec = New-Object VMware.Vim.EnvironmentBrowserConfigOptionQuerySpec
+$spec.GuestId = New-Object String[] (1)
+$spec.GuestId[0] = 'windows8Server64Guest'
+$spec.Key = 'vmx-14'
+$_this = Get-View -Id 'EnvironmentBrowser-envbrowser-1041'
+$_this.QueryConfigOptionEx($spec)
+
+#---------------QueryConfigTarget---------------
+$_this = Get-View -Id 'EnvironmentBrowser-envbrowser-1041'
+$_this.QueryConfigTarget($null)
+
+#---------------QueryTargetCapabilities---------------
+$_this = Get-View -Id 'EnvironmentBrowser-envbrowser-1041'
+$_this.QueryTargetCapabilities($null)
+
+#---------------DatastoreBrowser---------------
+$_this = Get-View -Id 'EnvironmentBrowser-envbrowser-1041'
+$_this.DatastoreBrowser
+
+#---------------QueryConfigOptionEx---------------
+$spec = New-Object VMware.Vim.EnvironmentBrowserConfigOptionQuerySpec
+$spec.GuestId = New-Object String[] (1)
+$spec.GuestId[0] = 'ubuntu64Guest'
+$spec.Key = 'vmx-14'
+$_this = Get-View -Id 'EnvironmentBrowser-envbrowser-1041'
+$_this.QueryConfigOptionEx($spec)
+
+#---------------ListKmipServers---------------
+$_this = Get-View -Id 'CryptoManagerKmip-CryptoManager'
+$_this.ListKmipServers($null)
+
+#---------------HasPrivilegeOnEntities---------------
+$entity = New-Object VMware.Vim.ManagedObjectReference[] (1)
+$entity[0] = New-Object VMware.Vim.ManagedObjectReference
+$entity[0].Type = 'Network'
+$entity[0].Value = 'network-32'
+$sessionId = '5269ab5c-5e0d-3d14-c026-03d331872eab'
+$privId = New-Object String[] (1)
+$privId[0] = 'Network.Assign'
+$_this = Get-View -Id 'AuthorizationManager-AuthorizationManager'
+$_this.HasPrivilegeOnEntities($entity, $sessionId, $privId)
+
+#---------------HasPrivilegeOnEntities---------------
+$entity = New-Object VMware.Vim.ManagedObjectReference[] (1)
+$entity[0] = New-Object VMware.Vim.ManagedObjectReference
+$entity[0].Type = 'DistributedVirtualPortgroup'
+$entity[0].Value = 'dvportgroup-1806'
+$sessionId = '5269ab5c-5e0d-3d14-c026-03d331872eab'
+$privId = New-Object String[] (1)
+$privId[0] = 'Network.Assign'
+$_this = Get-View -Id 'AuthorizationManager-AuthorizationManager'
+$_this.HasPrivilegeOnEntities($entity, $sessionId, $privId)
+
+#---------------HasPrivilegeOnEntities---------------
+$entity = New-Object VMware.Vim.ManagedObjectReference[] (1)
+$entity[0] = New-Object VMware.Vim.ManagedObjectReference
+$entity[0].Type = 'DistributedVirtualPortgroup'
+$entity[0].Value = 'dvportgroup-1806'
+$sessionId = '5269ab5c-5e0d-3d14-c026-03d331872eab'
+$privId = New-Object String[] (1)
+$privId[0] = 'Network.Assign'
+$_this = Get-View -Id 'AuthorizationManager-AuthorizationManager'
+$_this.HasPrivilegeOnEntities($entity, $sessionId, $privId)
+
+#---------------RecommendDatastores---------------
+$storageSpec = New-Object VMware.Vim.StoragePlacementSpec
+$storageSpec.ConfigSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
+$storageSpec.ConfigSpec.NumCPUs = 4
+$storageSpec.ConfigSpec.Flags = New-Object VMware.Vim.VirtualMachineFlagInfo
+$storageSpec.ConfigSpec.Flags.VirtualMmuUsage = 'automatic'
+$storageSpec.ConfigSpec.Flags.MonitorType = 'release'
+$storageSpec.ConfigSpec.Flags.EnableLogging = $true
+$storageSpec.ConfigSpec.VirtualSMCPresent = $false
+$storageSpec.ConfigSpec.MaxMksConnections = 40
+$storageSpec.ConfigSpec.CpuFeatureMask = New-Object VMware.Vim.VirtualMachineCpuIdInfoSpec[] (0)
+$storageSpec.ConfigSpec.Tools = New-Object VMware.Vim.ToolsConfigInfo
+$storageSpec.ConfigSpec.Tools.BeforeGuestShutdown = $true
+$storageSpec.ConfigSpec.Tools.ToolsUpgradePolicy = 'manual'
+$storageSpec.ConfigSpec.Tools.BeforeGuestStandby = $true
+$storageSpec.ConfigSpec.Tools.AfterResume = $true
+$storageSpec.ConfigSpec.Tools.AfterPowerOn = $true
+$storageSpec.ConfigSpec.Version = 'vmx-14'
+$storageSpec.ConfigSpec.LatencySensitivity = New-Object VMware.Vim.LatencySensitivity
+$storageSpec.ConfigSpec.LatencySensitivity.Level = 'normal'
+$storageSpec.ConfigSpec.VirtualICH7MPresent = $false
+$storageSpec.ConfigSpec.MemoryMB = 2048
+$storageSpec.ConfigSpec.MemoryAllocation = New-Object VMware.Vim.ResourceAllocationInfo
+$storageSpec.ConfigSpec.MemoryAllocation.Shares = New-Object VMware.Vim.SharesInfo
+$storageSpec.ConfigSpec.MemoryAllocation.Shares.Shares = 20480
+$storageSpec.ConfigSpec.MemoryAllocation.Shares.Level = 'normal'
+$storageSpec.ConfigSpec.MemoryAllocation.Limit = -1
+$storageSpec.ConfigSpec.MemoryAllocation.Reservation = 0
+$storageSpec.ConfigSpec.NumCoresPerSocket = 1
+$storageSpec.ConfigSpec.BootOptions = New-Object VMware.Vim.VirtualMachineBootOptions
+$storageSpec.ConfigSpec.MigrateEncryption = 'opportunistic'
+$storageSpec.ConfigSpec.CpuAllocation = New-Object VMware.Vim.ResourceAllocationInfo
+$storageSpec.ConfigSpec.CpuAllocation.Shares = New-Object VMware.Vim.SharesInfo
+$storageSpec.ConfigSpec.CpuAllocation.Shares.Shares = 4000
+$storageSpec.ConfigSpec.CpuAllocation.Shares.Level = 'normal'
+$storageSpec.ConfigSpec.CpuAllocation.Limit = -1
+$storageSpec.ConfigSpec.CpuAllocation.Reservation = 0
+$storageSpec.ConfigSpec.DeviceChange = New-Object VMware.Vim.VirtualDeviceConfigSpec[] (6)
+$storageSpec.ConfigSpec.DeviceChange[0] = New-Object VMware.Vim.VirtualDeviceConfigSpec
+$storageSpec.ConfigSpec.DeviceChange[0].Device = New-Object VMware.Vim.VirtualMachineVideoCard
+$storageSpec.ConfigSpec.DeviceChange[0].Device.NumDisplays = 1
+$storageSpec.ConfigSpec.DeviceChange[0].Device.UseAutoDetect = $false
+$storageSpec.ConfigSpec.DeviceChange[0].Device.ControllerKey = 100
+$storageSpec.ConfigSpec.DeviceChange[0].Device.UnitNumber = 0
+$storageSpec.ConfigSpec.DeviceChange[0].Device.Use3dRenderer = 'automatic'
+$storageSpec.ConfigSpec.DeviceChange[0].Device.Enable3DSupport = $false
+$storageSpec.ConfigSpec.DeviceChange[0].Device.DeviceInfo = New-Object VMware.Vim.Description
+$storageSpec.ConfigSpec.DeviceChange[0].Device.DeviceInfo.Summary = 'Video card'
+$storageSpec.ConfigSpec.DeviceChange[0].Device.DeviceInfo.Label = 'Video card '
+$storageSpec.ConfigSpec.DeviceChange[0].Device.Key = 500
+$storageSpec.ConfigSpec.DeviceChange[0].Device.VideoRamSizeInKB = 4096
+$storageSpec.ConfigSpec.DeviceChange[0].Operation = 'add'
+$storageSpec.ConfigSpec.DeviceChange[1] = New-Object VMware.Vim.VirtualDeviceConfigSpec
+$storageSpec.ConfigSpec.DeviceChange[1].Device = New-Object VMware.Vim.VirtualLsiLogicController
+$storageSpec.ConfigSpec.DeviceChange[1].Device.SharedBus = 'noSharing'
+$storageSpec.ConfigSpec.DeviceChange[1].Device.ScsiCtlrUnitNumber = 7
+$storageSpec.ConfigSpec.DeviceChange[1].Device.DeviceInfo = New-Object VMware.Vim.Description
+$storageSpec.ConfigSpec.DeviceChange[1].Device.DeviceInfo.Summary = 'New SCSI controller'
+$storageSpec.ConfigSpec.DeviceChange[1].Device.DeviceInfo.Label = 'New SCSI controller'
+$storageSpec.ConfigSpec.DeviceChange[1].Device.Key = -112
+$storageSpec.ConfigSpec.DeviceChange[1].Device.BusNumber = 0
+$storageSpec.ConfigSpec.DeviceChange[1].Operation = 'add'
+$storageSpec.ConfigSpec.DeviceChange[2] = New-Object VMware.Vim.VirtualDeviceConfigSpec
+$storageSpec.ConfigSpec.DeviceChange[2].FileOperation = 'create'
+$storageSpec.ConfigSpec.DeviceChange[2].Device = New-Object VMware.Vim.VirtualDisk
+$storageSpec.ConfigSpec.DeviceChange[2].Device.CapacityInBytes = 17179869184
+$storageSpec.ConfigSpec.DeviceChange[2].Device.StorageIOAllocation = New-Object VMware.Vim.StorageIOAllocationInfo
+$storageSpec.ConfigSpec.DeviceChange[2].Device.StorageIOAllocation.Shares = New-Object VMware.Vim.SharesInfo
+$storageSpec.ConfigSpec.DeviceChange[2].Device.StorageIOAllocation.Shares.Shares = 1000
+$storageSpec.ConfigSpec.DeviceChange[2].Device.StorageIOAllocation.Shares.Level = 'normal'
+$storageSpec.ConfigSpec.DeviceChange[2].Device.StorageIOAllocation.Limit = -1
+$storageSpec.ConfigSpec.DeviceChange[2].Device.Backing = New-Object VMware.Vim.VirtualDiskFlatVer2BackingInfo
+$storageSpec.ConfigSpec.DeviceChange[2].Device.Backing.FileName = ''
+$storageSpec.ConfigSpec.DeviceChange[2].Device.Backing.EagerlyScrub = $false
+$storageSpec.ConfigSpec.DeviceChange[2].Device.Backing.ThinProvisioned = $false
+$storageSpec.ConfigSpec.DeviceChange[2].Device.Backing.DiskMode = 'persistent'
+$storageSpec.ConfigSpec.DeviceChange[2].Device.ControllerKey = -112
+$storageSpec.ConfigSpec.DeviceChange[2].Device.UnitNumber = 0
+$storageSpec.ConfigSpec.DeviceChange[2].Device.CapacityInKB = 16777216
+$storageSpec.ConfigSpec.DeviceChange[2].Device.DeviceInfo = New-Object VMware.Vim.Description
+$storageSpec.ConfigSpec.DeviceChange[2].Device.DeviceInfo.Summary = 'New Hard disk'
+$storageSpec.ConfigSpec.DeviceChange[2].Device.DeviceInfo.Label = 'New Hard disk'
+$storageSpec.ConfigSpec.DeviceChange[2].Device.Key = -113
+$storageSpec.ConfigSpec.DeviceChange[2].Operation = 'add'
+$storageSpec.ConfigSpec.DeviceChange[3] = New-Object VMware.Vim.VirtualDeviceConfigSpec
+$storageSpec.ConfigSpec.DeviceChange[3].Device = New-Object VMware.Vim.VirtualVmxnet3
+$storageSpec.ConfigSpec.DeviceChange[3].Device.MacAddress = ''
+$storageSpec.ConfigSpec.DeviceChange[3].Device.ResourceAllocation = New-Object VMware.Vim.VirtualEthernetCardResourceAllocation
+$storageSpec.ConfigSpec.DeviceChange[3].Device.ResourceAllocation.Limit = -1
+$storageSpec.ConfigSpec.DeviceChange[3].Device.ResourceAllocation.Reservation = 0
+$storageSpec.ConfigSpec.DeviceChange[3].Device.ResourceAllocation.Share = New-Object VMware.Vim.SharesInfo
+$storageSpec.ConfigSpec.DeviceChange[3].Device.ResourceAllocation.Share.Shares = 50
+$storageSpec.ConfigSpec.DeviceChange[3].Device.ResourceAllocation.Share.Level = 'normal'
+$storageSpec.ConfigSpec.DeviceChange[3].Device.Connectable = New-Object VMware.Vim.VirtualDeviceConnectInfo
+$storageSpec.ConfigSpec.DeviceChange[3].Device.Connectable.Connected = $true
+$storageSpec.ConfigSpec.DeviceChange[3].Device.Connectable.AllowGuestControl = $true
+$storageSpec.ConfigSpec.DeviceChange[3].Device.Connectable.StartConnected = $true
+$storageSpec.ConfigSpec.DeviceChange[3].Device.Backing = New-Object VMware.Vim.VirtualEthernetCardDistributedVirtualPortBackingInfo
+$storageSpec.ConfigSpec.DeviceChange[3].Device.Backing.Port = New-Object VMware.Vim.DistributedVirtualSwitchPortConnection
+$storageSpec.ConfigSpec.DeviceChange[3].Device.Backing.Port.SwitchUuid = '50 2f 80 ca 45 97 d9 dc-ef 64 12 cd 6c a7 52 ef'
+$storageSpec.ConfigSpec.DeviceChange[3].Device.Backing.Port.PortgroupKey = 'dvportgroup-1806'
+$storageSpec.ConfigSpec.DeviceChange[3].Device.AddressType = 'generated'
+$storageSpec.ConfigSpec.DeviceChange[3].Device.DeviceInfo = New-Object VMware.Vim.Description
+$storageSpec.ConfigSpec.DeviceChange[3].Device.DeviceInfo.Summary = 'New Network'
+$storageSpec.ConfigSpec.DeviceChange[3].Device.DeviceInfo.Label = 'New Network'
+$storageSpec.ConfigSpec.DeviceChange[3].Device.Key = -114
+$storageSpec.ConfigSpec.DeviceChange[3].Operation = 'add'
+$storageSpec.ConfigSpec.DeviceChange[4] = New-Object VMware.Vim.VirtualDeviceConfigSpec
+$storageSpec.ConfigSpec.DeviceChange[4].Device = New-Object VMware.Vim.VirtualAHCIController
+$storageSpec.ConfigSpec.DeviceChange[4].Device.DeviceInfo = New-Object VMware.Vim.Description
+$storageSpec.ConfigSpec.DeviceChange[4].Device.DeviceInfo.Summary = 'New SATA Controller'
+$storageSpec.ConfigSpec.DeviceChange[4].Device.DeviceInfo.Label = 'New SATA Controller'
+$storageSpec.ConfigSpec.DeviceChange[4].Device.Key = -115
+$storageSpec.ConfigSpec.DeviceChange[4].Device.BusNumber = 0
+$storageSpec.ConfigSpec.DeviceChange[4].Operation = 'add'
+$storageSpec.ConfigSpec.DeviceChange[5] = New-Object VMware.Vim.VirtualDeviceConfigSpec
+$storageSpec.ConfigSpec.DeviceChange[5].Device = New-Object VMware.Vim.VirtualCdrom
+$storageSpec.ConfigSpec.DeviceChange[5].Device.Connectable = New-Object VMware.Vim.VirtualDeviceConnectInfo
+$storageSpec.ConfigSpec.DeviceChange[5].Device.Connectable.Connected = $false
+$storageSpec.ConfigSpec.DeviceChange[5].Device.Connectable.AllowGuestControl = $true
+$storageSpec.ConfigSpec.DeviceChange[5].Device.Connectable.StartConnected = $true
+$storageSpec.ConfigSpec.DeviceChange[5].Device.Backing = New-Object VMware.Vim.VirtualCdromIsoBackingInfo
+$storageSpec.ConfigSpec.DeviceChange[5].Device.Backing.FileName = '[NFS-1] contentlib-c8743c07-b68d-4baf-95f9-e017ac02681f/10de94ff-a162-4e27-bbc2-11882d79fefb/ubuntu-18.04.3-desktop-amd64_ee7f4df1-4507-41ec-8dc5-6c0cec657a75.iso'
+$storageSpec.ConfigSpec.DeviceChange[5].Device.ControllerKey = -115
+$storageSpec.ConfigSpec.DeviceChange[5].Device.UnitNumber = 0
+$storageSpec.ConfigSpec.DeviceChange[5].Device.DeviceInfo = New-Object VMware.Vim.Description
+$storageSpec.ConfigSpec.DeviceChange[5].Device.DeviceInfo.Summary = 'New CD/DVD Drive'
+$storageSpec.ConfigSpec.DeviceChange[5].Device.DeviceInfo.Label = 'New CD/DVD Drive'
+$storageSpec.ConfigSpec.DeviceChange[5].Device.Key = -116
+$storageSpec.ConfigSpec.DeviceChange[5].Operation = 'add'
+$storageSpec.ConfigSpec.MemoryReservationLockedToMax = $false
+$storageSpec.ConfigSpec.Name = 'ub6'
+$storageSpec.ConfigSpec.Files = New-Object VMware.Vim.VirtualMachineFileInfo
+$storageSpec.ConfigSpec.CpuAffinity = New-Object VMware.Vim.VirtualMachineAffinityInfo
+$storageSpec.ConfigSpec.CpuAffinity.AffinitySet = New-Object int[] (0)
+$storageSpec.ConfigSpec.PowerOpInfo = New-Object VMware.Vim.VirtualMachineDefaultPowerOpInfo
+$storageSpec.ConfigSpec.PowerOpInfo.SuspendType = 'preset'
+$storageSpec.ConfigSpec.PowerOpInfo.StandbyAction = 'checkpoint'
+$storageSpec.ConfigSpec.PowerOpInfo.ResetType = 'preset'
+$storageSpec.ConfigSpec.PowerOpInfo.PowerOffType = 'preset'
+$storageSpec.ConfigSpec.SwapPlacement = 'inherit'
+$storageSpec.ConfigSpec.Firmware = 'bios'
+$storageSpec.ConfigSpec.GuestId = 'ubuntu64Guest'
+$storageSpec.Folder = New-Object VMware.Vim.ManagedObjectReference
+$storageSpec.Folder.Type = 'Folder'
+$storageSpec.Folder.Value = 'group-v3'
+$storageSpec.PodSelectionSpec = New-Object VMware.Vim.StorageDrsPodSelectionSpec
+$storageSpec.PodSelectionSpec.StoragePod = New-Object VMware.Vim.ManagedObjectReference
+$storageSpec.PodSelectionSpec.StoragePod.Type = 'StoragePod'
+$storageSpec.PodSelectionSpec.StoragePod.Value = 'group-p1810'
+$storageSpec.PodSelectionSpec.InitialVmConfig = New-Object VMware.Vim.VmPodConfigForPlacement[] (2)
+$storageSpec.PodSelectionSpec.InitialVmConfig[0] = New-Object VMware.Vim.VmPodConfigForPlacement
+$storageSpec.PodSelectionSpec.InitialVmConfig[0].Disk = New-Object VMware.Vim.PodDiskLocator[] (0)
+$storageSpec.PodSelectionSpec.InitialVmConfig[0].StoragePod = New-Object VMware.Vim.ManagedObjectReference
+$storageSpec.PodSelectionSpec.InitialVmConfig[0].StoragePod.Type = 'StoragePod'
+$storageSpec.PodSelectionSpec.InitialVmConfig[0].StoragePod.Value = 'group-p1810'
+$storageSpec.PodSelectionSpec.InitialVmConfig[1] = New-Object VMware.Vim.VmPodConfigForPlacement
+$storageSpec.PodSelectionSpec.InitialVmConfig[1].Disk = New-Object VMware.Vim.PodDiskLocator[] (1)
+$storageSpec.PodSelectionSpec.InitialVmConfig[1].Disk[0] = New-Object VMware.Vim.PodDiskLocator
+$storageSpec.PodSelectionSpec.InitialVmConfig[1].Disk[0].DiskBackingInfo = New-Object VMware.Vim.VirtualDiskFlatVer2BackingInfo
+$storageSpec.PodSelectionSpec.InitialVmConfig[1].Disk[0].DiskBackingInfo.FileName = ''
+$storageSpec.PodSelectionSpec.InitialVmConfig[1].Disk[0].DiskBackingInfo.EagerlyScrub = $false
+$storageSpec.PodSelectionSpec.InitialVmConfig[1].Disk[0].DiskBackingInfo.ThinProvisioned = $false
+$storageSpec.PodSelectionSpec.InitialVmConfig[1].Disk[0].DiskBackingInfo.DiskMode = 'persistent'
+$storageSpec.PodSelectionSpec.InitialVmConfig[1].Disk[0].DiskId = -113
+$storageSpec.PodSelectionSpec.InitialVmConfig[1].StoragePod = New-Object VMware.Vim.ManagedObjectReference
+$storageSpec.PodSelectionSpec.InitialVmConfig[1].StoragePod.Type = 'StoragePod'
+$storageSpec.PodSelectionSpec.InitialVmConfig[1].StoragePod.Value = 'group-p1810'
+$storageSpec.Type = 'create'
+$storageSpec.ResourcePool = New-Object VMware.Vim.ManagedObjectReference
+$storageSpec.ResourcePool.Type = 'ResourcePool'
+$storageSpec.ResourcePool.Value = 'resgroup-1042'
+$_this = Get-View -Id 'StorageResourceManager-StorageResourceManager'
+$_this.RecommendDatastores($storageSpec)
+
+#---------------ApplyStorageDrsRecommendation_Task---------------
+$key = New-Object String[] (1)
+$key[0] = '257'
+$_this = Get-View -Id 'StorageResourceManager-StorageResourceManager'
+$_this.ApplyStorageDrsRecommendation_Task($key)
+
+
+#----------------- End of code capture -----------------
