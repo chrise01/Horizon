@@ -11,4 +11,7 @@ ftp admin@VMware1!:192.168.2.30
 get HZ.tar.gz
 quit
 tar -xzvf HZ.tar.gz
-sudo ./install_viewagent.sh 
+
+sudo ./install-viewagent.sh -b HZ-Connection.test.local -d test.local -u administrator -k Win16-AD.test.local
+##Where -b is the connection broker, -d is the domain of the administrator account and -u is for the administrators user account itself. The -k is for the domain controller where the user account resides (Kerberos).
+## sudo service viewagent status
